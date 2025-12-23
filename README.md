@@ -58,9 +58,9 @@ The AWS **p4d.24xlarge instance** is a high-performance computing instance desig
 
 1. Move to the model folder
 2. Start the vLLM inference server by running ```server_start.sh```
-3. Once the server is started, the baseline test to collect model accuracy data with zero context.
-4. For Qwen model (& Mistral as extension) run the ```Thread_test.py``` script to capture 4096 word in cotext quality and search accuracy (needle in haystack) tests. For Llama model update the ```SIMPLE_BASELINE_LOOPS```, ```NEEDLE_HAYSTACK_LOOPS``` and ```MAX_THREADS_SAFETY_LIMIT``` variables in ```Thread_test.py``` to run 10 loops in a single thread.
-5. For 10000 and 150000 words in context tests, update the ```MAX_WORDS_REQUIRED```, ```SIMPLE_BASELINE_LOOPS```, ```NEEDLE_HAYSTACK_LOOPS``` and ```MAX_THREADS_SAFETY_LIMIT``` variables in ```Thread_test.py``` to run 10 loops with desired context-lenghth in a single thread.
+3. Once the server is started, execute the baseline test script ```Baseline_test.py ``` to collect model accuracy data with zero context length.
+4. For Qwen model (& Mistral as extension) run the ```Thread_test.py``` script to capture 4096 word in cotext tests to capture model quality and search accuracy (needle in haystack). For the Llama model update the ```SIMPLE_BASELINE_LOOPS```, ```NEEDLE_HAYSTACK_LOOPS``` and ```MAX_THREADS_SAFETY_LIMIT``` variables in ```Thread_test.py``` to run 10 loops in a single thread.
+5. Across all models, for 10000 and 150000 words in context tests, update the ```MAX_WORDS_REQUIRED```, ```SIMPLE_BASELINE_LOOPS```, ```NEEDLE_HAYSTACK_LOOPS``` and ```MAX_THREADS_SAFETY_LIMIT``` variables in ```Thread_test.py``` to run 10 loops with desired context-lenghth in a single thread.
 6. All the result files are generated under the ***app/results*** folder.
 7. **Please refer to the analysis sheet [here](https://docs.google.com/spreadsheets/d/1xvmCM4Fipjq8tPySF-ss3DwI5SjVZEkfY2NgVbQZa2w/edit?usp=sharing) for the with necessary data filtering, calculations and graphs that are used in the research submission.** Please use ```view->Hidden sheets``` option to access datasheet(s) of interest. 
 

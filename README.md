@@ -19,24 +19,37 @@ You must obtain a Hugging Face API token with WRITE permissions to access the mo
 Add this to your deployment setup.
 
 
-##  Project Structure
+##  Project Structure ##
 
 ```
 LOAD_TESTER_FILES/
 │
 ├── LLAMA/                          # LLaMA Model Tests
-│   ├── Baseline_test.py            # Baseline accuracy test (3 loops, Zero Context, 10 loops test for GPU load impact analysis)
+│   ├── Baseline_test.py            # Baseline accuracy test (3 loops, Zero Context)
 │   ├── Thread_test.py              # Threading load test (Not performed due to the size of the model)
 │   └── server_start.sh             # vLLM server startup script
 │
 ├── QWEN/                           # Qwen Model Tests
-│   ├── Baseline_test.py            # Baseline accuracy test (3 loops)
+│   ├── Baseline_test.py            # Baseline accuracy test (3 loops, Zero Context)
 │   ├── Thread_test.py              # Threading load test (4096 context, max 4 concurrent threads)
 │   └── server_start.sh             # vLLM server startup script
 │
 ├── MISTRAL/                        # Mistral Model Tests
-│   ├── Baseline_test.py            # Baseline accuracy test (3 loops)
+│   ├── Baseline_test.py            # Baseline accuracy test (3 loops, Zero Context)
 │   ├── Thread_test.py              # Threading load test (4096 context, max 4 concurrent threads)
 │   └── server_start.sh             # vLLM server startup script
 │
 └── README.md                       
+```
+## Execution Environment ##
+
+The tests were run in the following server configuration. 
+The AWS **p4d.24xlarge instance** is a high-performance computing instance designed for training and deploying large-scale machine learning models.
+
+### The server configuration
+
+- **GPUs:** 8 NVIDIA A100 Tensor Core GPUs.
+- **GPU Memory (VRAM):** 40 GB per GPU (Total 320 GB VRAM across the instance).
+- **System Memory (RAM):** 1.1 TB (1,152 GB).
+- **vCPUs:** 96 vCPUs (Intel Xeon Scalable processors).
+- **Network Bandwidth:** 400 Gbps.

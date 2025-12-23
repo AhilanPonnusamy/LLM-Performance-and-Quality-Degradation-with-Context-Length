@@ -31,12 +31,12 @@ LOAD_TESTER_FILES/
 │
 ├── QWEN/                           # Qwen Model Tests
 │   ├── Baseline_test.py            # Baseline accuracy test (3 loops, Zero Context)
-│   ├── Thread_test.py              # Threading load test (4096 context, max 4 concurrent threads)
+│   ├── Thread_test.py              # Threading load test (4096 context)
 │   └── server_start.sh             # vLLM server startup script
 │
 ├── MISTRAL/                        # Mistral Model Tests
 │   ├── Baseline_test.py            # Baseline accuracy test (3 loops, Zero Context)
-│   ├── Thread_test.py              # Threading load test (4096 context, max 4 concurrent threads)
+│   ├── Thread_test.py              # Threading load test (4096 context)
 │   └── server_start.sh             # vLLM server startup script
 │
 └── README.md                       
@@ -53,3 +53,14 @@ The AWS **p4d.24xlarge instance** is a high-performance computing instance desig
 - **System Memory (RAM):** 1.1 TB (1,152 GB).
 - **vCPUs:** 96 vCPUs (Intel Xeon Scalable processors).
 - **Network Bandwidth:** 400 Gbps.
+
+## Data Collection Runs ##
+
+1. Move to the model folder
+2. Start the vLLM inference server by running ```server_start.sh```
+3. Once the server is started, the baseline test to collect model accuracy data with zero context.
+4. For Qwen model (& Mistral as extension) run the ```Thread_test.py``` script to capture 4096 word in cotext quality and search accuracy (needle in haystack) tests. For Llama model update the ```SIMPLE_BASELINE_LOOPS```, ```NEEDLE_HAYSTACK_LOOPS``` and ```MAX_THREADS_SAFETY_LIMIT``` variables in ```Thread_test.py``` to run 10 loops in a single thread.
+5. For 10000 and 150000 words in context tests, update the ```MAX_WORDS_REQUIRED```, ```SIMPLE_BASELINE_LOOPS```, ```NEEDLE_HAYSTACK_LOOPS``` and ```MAX_THREADS_SAFETY_LIMIT``` variables in ```Thread_test.py``` to run 10 loops with desired context-lenghth in a single thread.
+6. All the result files are generated under the ***app/results*** folder.
+7. **Please refer to the analysis folder for the working sheet with necessary data filtering, forumulas and graphs that are used in the research submission.**
+

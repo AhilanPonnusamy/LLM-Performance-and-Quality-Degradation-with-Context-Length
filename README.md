@@ -7,7 +7,7 @@ This framework quantifies how high-concurrency environments and massive context 
 Two types of models were used for this research
 1. **Dense Transformer Models (Primary):** Llama-3.1-70B and Qwen-1.5-14B models are used to cover LLMs of large and small sizes.
 2. **Sparse Mixture-of-Experts (MOE):** Mistral (Mixtral-8x7B MoE model with ~13B active
-parameters) is utilized as an architectural extension to compare how sparse activation routing handles high-concurrency stress differently than traditional dense models.
+parameters) is utilized as an architectural extension to compare how sparse activation routing handles high-concurrency stress differently than traditional dense transformer models.
 ---
 
 ## Prerequisites

@@ -5,7 +5,7 @@ A comprehensive load testing framework designed to evaluate Large Language Model
 This framework quantifies how high-concurrency environments and massive context loads impact the reliability of LLMs. By analyzing the relationship between system resource saturation (VRAM/GPU utilization) and model quality, the project offers insights into the trade-offs between serving efficiency and contextual fidelity.
 
 Two types of models were used for this research
-1. **Dense Transformer Models (Primary):** Llama-3.1-70B and Qwen-1.5-14B models are used to cover LLMs of small and large sizes.
+1. **Dense Transformer Models (Primary):** Llama-3.1-70B and Qwen-1.5-14B models are used to cover LLMs of large and small sizes.
 2. **Sparse Mixture-of-Experts (MOE):** Mistral (Mixtral-8x7B MoE model with ~13B active
 parameters) is utilized as an architectural extension to compare how sparse activation routing handles high-concurrency stress differently than traditional dense models.
 ---

@@ -1,4 +1,4 @@
-# LLM Load Testing Framework (Data Collection for LLM Performance and Quality Degradation Analysis)
+# Data Collection for LLM Performance and Quality Degradation Analysis
 
 A comprehensive load testing framework designed to evaluate Large Language Model (LLM) performance and reasoning integrity under varying operational stress. This project provides the tooling and methodology to benchmark inference latency and output accuracy across diverse model architectures.
 

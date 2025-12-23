@@ -9,7 +9,8 @@ from openai import OpenAI
 from datetime import datetime
 
 # --- CONFIGURATION ---
-# IMPORTANT: Change this to match the model running in vLLM
+# Model name must exactly match the model loaded in the vLLM server
+
 MODEL_BEING_TESTED = "Qwen/Qwen1.5-14B-Chat" # "mistralai/Mixtral-8x7B-Instruct-v0.1"
 VLLM_HOST = "http://vllm:8000/v1"
 API_KEY = "vllm"  # Dummy key for vLLM
@@ -18,6 +19,7 @@ GPU_UTILIZATION_THRESHOLD = 99.95  # The target GPU % to stop the test
 
 OUTPUT_CSV_FILE = "/app/results/results_vllm_qwen_baseline.csv"  # Save to mounted volume
 
+# Number of times the full question set is repeated
 SIMPLE_BASELINE_LOOPS = 3
 GENERAL_KNOWLEDGE_QUESTIONS = [
 {"question": "What is the capital of France?", "answer": "paris"},

@@ -9,12 +9,12 @@ from openai import OpenAI
 from datetime import datetime
 
 # --- CONFIGURATION ---
-# IMPORTANT: Change this to match the model running in vLLM
+# Model name must exactly match the model loaded in the vLLM server
 MODEL_BEING_TESTED = "Qwen/Qwen1.5-14B-Chat"
 VLLM_HOST = "http://vllm:8000/v1"
 API_KEY = "vllm"  # Dummy key for vLLM
 
-STARTING_THREADS = 1
+STARTING_THREADS = 1 # set the Initial Thread count
 THREAD_INCREMENT = 1
 MAX_THREADS_SAFETY_LIMIT = 100  # A safety limit to prevent an infinite loop
 GPU_UTILIZATION_THRESHOLD = 99.95  # The target GPU % to stop the test
